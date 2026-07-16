@@ -358,7 +358,7 @@
 
 /* Welcome Banner */
 .admin-welcome-banner {
-  background: linear-gradient(135deg, hsl(224 25% 12%) 0%, hsl(224 25% 6%) 100%);
+  background: linear-gradient(135deg, hsl(var(--bg-card-hover)) 0%, hsl(var(--bg-dark)) 100%);
   border: 1px solid hsl(var(--border));
   border-radius: 16px;
   padding: 1.5rem 2rem;
@@ -701,7 +701,7 @@
 .schematic-engine-btn {
   width: 45px;
   height: 40px;
-  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--bg-card)) 100%);
   border: 1px solid hsl(var(--primary));
   border-radius: 4px;
   display: flex;
@@ -1236,7 +1236,7 @@
 .engine-cab {
   width: 140px;
   height: 96px;
-  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--bg-card)) 100%);
   border: 2px solid hsl(var(--primary));
   border-radius: 8px;
   position: relative;
@@ -1506,7 +1506,7 @@
 
 .direct-engine {
   width: 50px;
-  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--bg-card)) 100%);
   border: 1px solid hsl(var(--primary));
   border-radius: 4px;
   flex-shrink: 0;

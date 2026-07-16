@@ -4,17 +4,17 @@
   --font-heading: 'Outfit', 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
 
-  /* HSL Tailored Color Palette */
-  --bg-dark: 224 25% 6%;
-  --bg-card: 224 25% 10%;
-  --bg-card-hover: 224 25% 13%;
-  --text-primary: 210 40% 98%;
-  --text-secondary: 215 20% 70%;
-  --text-muted: 215 15% 50%;
+  /* HSL Tailored Color Palette from (#F9F7F7, #DBE2EF, #3F72AF, #112D4E) */
+  --bg-dark: 213 64% 10%;
+  --bg-card: 213 64% 19%;     /* #112D4E */
+  --bg-card-hover: 213 54% 24%;
+  --text-primary: 0 11% 98%;   /* #F9F7F7 */
+  --text-secondary: 218 37% 90%; /* #DBE2EF */
+  --text-muted: 218 15% 65%;
 
   /* Accent Colors */
-  --primary: 217 91% 60%; /* Railway Blue */
-  --primary-hover: 217 91% 50%;
+  --primary: 213 47% 46%;     /* #3F72AF */
+  --primary-hover: 213 57% 55%;
   
   --success: 142 70% 45%; /* Low Occupancy - Green */
   --success-glow: 142 70% 45% / 0.15;
@@ -25,9 +25,9 @@
   --danger: 0 84% 60%; /* High Occupancy - Red */
   --danger-glow: 0 84% 60% / 0.15;
 
-  --border: 224 25% 16%;
-  --glass-bg: 224 25% 10% / 0.65;
-  --glass-border: 224 25% 18% / 0.5;
+  --border: 213 40% 28%;
+  --glass-bg: 213 64% 19% / 0.65;
+  --glass-border: 218 37% 90% / 0.15;
   
   /* Women's coach special theme */
   --women: 322 81% 65%;
