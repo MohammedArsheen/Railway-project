@@ -4,41 +4,42 @@
   --font-heading: 'Outfit', 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
 
-  /* HSL Tailored Color Palette from (#F9F7F7, #DBE2EF, #3F72AF, #112D4E) */
-  --bg-dark: 213 64% 10%;
-  --bg-card: 213 64% 19%;     /* #112D4E */
-  --bg-card-hover: 213 54% 24%;
-  --text-primary: 0 11% 98%;   /* #F9F7F7 */
-  --text-secondary: 218 37% 90%; /* #DBE2EF */
-  --text-muted: 218 15% 65%;
+  /* HSL Tailored Light Color Palette from (#F9F7F7, #DBE2EF, #3F72AF, #112D4E) */
+  --bg-dark: 210 20% 98%;       /* #F9F7F7 - Main App Background (Off-white) */
+  --bg-card: 0 0% 100%;         /* Pure White for card components */
+  --bg-card-hover: 218 37% 96%;   /* Soft Pale Blue #DBE2EF tint for active/hover */
+  --text-primary: 213 64% 19%;   /* #112D4E - Deep Dark Blue for primary headers */
+  --text-secondary: 213 30% 38%; /* Muted Dark Blue for body text & labels */
+  --text-muted: 213 18% 55%;      /* Slate-gray for captions and metadata */
 
   /* Accent Colors */
-  --primary: 213 47% 46%;     /* #3F72AF */
-  --primary-hover: 213 57% 55%;
+  --primary: 213 47% 46%;       /* #3F72AF - Active primary accents */
+  --primary-hover: 213 55% 38%;
   
-  --success: 142 70% 45%; /* Low Occupancy - Green */
-  --success-glow: 142 70% 45% / 0.15;
+  /* Occupancy States (Optimized for light-background readability) */
+  --success: 142 65% 32%;        /* Slightly darker green for light bg contrast */
+  --success-glow: 142 65% 32% / 0.1;
   
-  --warning: 38 92% 50%; /* Medium Occupancy - Yellow */
-  --warning-glow: 38 92% 50% / 0.15;
+  --warning: 38 85% 38%;         /* Rich amber for warning */
+  --warning-glow: 38 85% 38% / 0.1;
   
-  --danger: 0 84% 60%; /* High Occupancy - Red */
-  --danger-glow: 0 84% 60% / 0.15;
+  --danger: 0 75% 42%;           /* Rich deep red for high occupancy */
+  --danger-glow: 0 75% 42% / 0.1;
 
-  --border: 213 40% 28%;
-  --glass-bg: 213 64% 19% / 0.65;
-  --glass-border: 218 37% 90% / 0.15;
+  --border: 218 37% 90%;        /* Soft border matching #DBE2EF exactly */
+  --glass-bg: 0 0% 100% / 0.8;
+  --glass-border: 218 37% 90% / 0.5;
   
   /* Women's coach special theme */
-  --women: 322 81% 65%;
-  --women-glow: 322 81% 65% / 0.15;
+  --women: 322 75% 52%;
+  --women-glow: 322 75% 52% / 0.1;
 
   /* First class & Differently-Abled themes */
-  --firstclass: 38 92% 58%;
-  --firstclass-glow: 38 92% 58% / 0.15;
+  --firstclass: 38 85% 42%;
+  --firstclass-glow: 38 85% 42% / 0.1;
   
-  --disabled: 262 83% 62%;
-  --disabled-glow: 262 83% 62% / 0.15;
+  --disabled: 262 70% 48%;
+  --disabled-glow: 262 70% 48% / 0.1;
 }
 
 * {
@@ -56,7 +57,12 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   letter-spacing: -0.02em;
 }
@@ -90,10 +96,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Animations */
 @keyframes pulse-glow {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.6;
     transform: scale(1);
   }
+
   50% {
     opacity: 1;
     transform: scale(1.03);
@@ -161,4 +170,70 @@ h1, h2, h3, h4, h5, h6 {
   background: hsl(var(--disabled-glow));
   color: hsl(var(--disabled));
   border: 1px solid hsl(var(--disabled) / 0.3);
+}
+
+/* --- Premium Animations & Transitions --- */
+
+/* Smooth fade and slide up for panels */
+@keyframes fade-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-slide-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Float animation for logos/icons */
+@keyframes float-icon {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(3deg);
+  }
+}
+
+.animate-float {
+  animation: float-icon 4s ease-in-out infinite;
+}
+
+/* Subtle micro-bounce for icons on hover */
+.hover-bounce {
+  transition: all 0.3s ease;
+}
+
+.hover-bounce:hover {
+  transform: translateY(-2px);
+}
+
+/* Interactive Card Base styling */
+.card-interactive {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.card-interactive:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(17, 45, 78, 0.06) !important;
+  border-color: hsl(var(--primary) / 0.4) !important;
+}
+
+/* Shimmer pulse loader animation */
+@keyframes shimmer-pulse {
+  0%, 100% {
+    opacity: 0.95;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+.shimmer-active {
+  animation: shimmer-pulse 2s infinite ease-in-out;
 }

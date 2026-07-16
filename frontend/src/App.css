@@ -33,7 +33,7 @@
 .logo-text h1 {
   font-size: 1.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #fff 0%, hsl(var(--text-secondary)) 100%);
+  background: linear-gradient(135deg, hsl(var(--text-primary)) 0%, hsl(var(--primary)) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -187,10 +187,21 @@
   border-radius: 3px;
 }
 
-.dot-low { background: hsl(var(--success)); }
-.dot-medium { background: hsl(var(--warning)); }
-.dot-high { background: hsl(var(--danger)); }
-.dot-women { background: hsl(var(--women)); }
+.dot-low {
+  background: hsl(var(--success));
+}
+
+.dot-medium {
+  background: hsl(var(--warning));
+}
+
+.dot-high {
+  background: hsl(var(--danger));
+}
+
+.dot-women {
+  background: hsl(var(--women));
+}
 
 /* Train Coaches visualizer */
 .train-coaches {
@@ -258,10 +269,12 @@
 .coach-card.low {
   border-color: hsl(var(--success) / 0.3);
 }
+
 .coach-card.low .coach-percentage,
 .coach-card.low .coach-label {
   color: hsl(var(--success));
 }
+
 .coach-card.low .coach-indicator-fill {
   background: hsl(var(--success));
 }
@@ -269,10 +282,12 @@
 .coach-card.medium {
   border-color: hsl(var(--warning) / 0.3);
 }
+
 .coach-card.medium .coach-percentage,
 .coach-card.medium .coach-label {
   color: hsl(var(--warning));
 }
+
 .coach-card.medium .coach-indicator-fill {
   background: hsl(var(--warning));
 }
@@ -280,10 +295,12 @@
 .coach-card.high {
   border-color: hsl(var(--danger) / 0.3);
 }
+
 .coach-card.high .coach-percentage,
 .coach-card.high .coach-label {
   color: hsl(var(--danger));
 }
+
 .coach-card.high .coach-indicator-fill {
   background: hsl(var(--danger));
 }
@@ -292,6 +309,7 @@
 .coach-card.women-only {
   border-color: hsl(var(--women) / 0.4);
 }
+
 .coach-card.women-only .coach-label {
   color: hsl(var(--women));
 }
@@ -325,8 +343,17 @@
 }
 
 @keyframes slide-arrow-right {
-  0%, 100% { transform: translateX(0); opacity: 0.6; }
-  50% { transform: translateX(6px); opacity: 1; }
+
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateX(6px);
+    opacity: 1;
+  }
 }
 
 
@@ -358,7 +385,7 @@
 
 /* Welcome Banner */
 .admin-welcome-banner {
-  background: linear-gradient(135deg, hsl(var(--bg-card-hover)) 0%, hsl(var(--bg-dark)) 100%);
+  background: linear-gradient(135deg, hsl(var(--bg-card)) 0%, hsl(var(--bg-card-hover)) 100%);
   border: 1px solid hsl(var(--border));
   border-radius: 16px;
   padding: 1.5rem 2rem;
@@ -367,7 +394,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 32px rgba(17, 45, 78, 0.05);
 }
 
 .admin-welcome-banner::before {
@@ -390,7 +417,7 @@
   font-size: 2rem;
   font-weight: 800;
   margin-bottom: 0.25rem;
-  background: linear-gradient(90deg, #fff 0%, hsl(var(--text-secondary)) 100%);
+  background: linear-gradient(90deg, hsl(var(--text-primary)) 0%, hsl(var(--primary)) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -421,7 +448,7 @@
   border-radius: 8px;
   opacity: 0.85;
   border: 1px solid hsl(var(--border));
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 20px rgba(17, 45, 78, 0.08);
   z-index: 1;
   transition: transform 0.3s ease;
 }
@@ -556,7 +583,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 30px rgba(17, 45, 78, 0.04);
   position: relative;
 }
 
@@ -571,7 +598,7 @@
 .deepdive-train-info h3 {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #fff;
+  color: hsl(var(--text-primary));
 }
 
 .deepdive-train-info p {
@@ -625,7 +652,7 @@
 .deepdive-stat-val {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #fff;
+  color: hsl(var(--text-primary));
   font-family: var(--font-heading);
 }
 
@@ -690,18 +717,34 @@
 }
 
 /* Specific Schematic Colors */
-.schematic-coach-btn.low { border-left: 3px solid hsl(var(--success)); }
-.schematic-coach-btn.medium { border-left: 3px solid hsl(var(--warning)); }
-.schematic-coach-btn.high { border-left: 3px solid hsl(var(--danger)); }
+.schematic-coach-btn.low {
+  border-left: 3px solid hsl(var(--success));
+}
 
-.schematic-coach-btn.women { border-top: 2px solid hsl(var(--women)); }
-.schematic-coach-btn.first { border-top: 2px solid hsl(var(--firstclass)); }
-.schematic-coach-btn.divyang { border-top: 2px solid hsl(var(--disabled)); }
+.schematic-coach-btn.medium {
+  border-left: 3px solid hsl(var(--warning));
+}
+
+.schematic-coach-btn.high {
+  border-left: 3px solid hsl(var(--danger));
+}
+
+.schematic-coach-btn.women {
+  border-top: 2px solid hsl(var(--women));
+}
+
+.schematic-coach-btn.first {
+  border-top: 2px solid hsl(var(--firstclass));
+}
+
+.schematic-coach-btn.divyang {
+  border-top: 2px solid hsl(var(--disabled));
+}
 
 .schematic-engine-btn {
   width: 45px;
   height: 40px;
-  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--bg-card)) 100%);
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--bg-card-hover)) 100%);
   border: 1px solid hsl(var(--primary));
   border-radius: 4px;
   display: flex;
@@ -712,8 +755,14 @@
   color: #fff;
   flex-shrink: 0;
 }
-.schematic-engine-btn.left { border-top-left-radius: 12px; }
-.schematic-engine-btn.right { border-top-right-radius: 12px; }
+
+.schematic-engine-btn.left {
+  border-top-left-radius: 12px;
+}
+
+.schematic-engine-btn.right {
+  border-top-right-radius: 12px;
+}
 
 /* Coach Live CCTV Edge AI Analytics View */
 .coach-ai-analytics {
@@ -743,7 +792,7 @@
 .ai-title h4 {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #fff;
+  color: hsl(var(--text-primary));
 }
 
 .ai-layout-grid {
@@ -800,12 +849,20 @@
 
 .ai-metric-value {
   font-weight: 600;
-  color: #fff;
+  color: hsl(var(--text-primary));
 }
 
-.ai-metric-value.success { color: hsl(var(--success)); }
-.ai-metric-value.warning { color: hsl(var(--warning)); }
-.ai-metric-value.danger { color: hsl(var(--danger)); }
+.ai-metric-value.success {
+  color: hsl(var(--success));
+}
+
+.ai-metric-value.warning {
+  color: hsl(var(--warning));
+}
+
+.ai-metric-value.danger {
+  color: hsl(var(--danger));
+}
 
 /* Zone density visualizer */
 .ai-zones-container {
@@ -871,9 +928,17 @@
   transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.ai-zone-progress-fill.clear { background: hsl(var(--success)); }
-.ai-zone-progress-fill.moderate { background: hsl(var(--warning)); }
-.ai-zone-progress-fill.congested { background: hsl(var(--danger)); }
+.ai-zone-progress-fill.clear {
+  background: hsl(var(--success));
+}
+
+.ai-zone-progress-fill.moderate {
+  background: hsl(var(--warning));
+}
+
+.ai-zone-progress-fill.congested {
+  background: hsl(var(--danger));
+}
 
 /* Sidebar widgets */
 .sidebar-widget {
@@ -895,7 +960,7 @@
 .widget-header h3 {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #fff;
+  color: hsl(var(--text-primary));
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -986,7 +1051,7 @@
 .alert-item-title {
   font-size: 0.8125rem;
   font-weight: 700;
-  color: #fff;
+  color: hsl(var(--text-primary));
 }
 
 .alert-item-time {
@@ -1063,8 +1128,13 @@
   border-radius: 50%;
 }
 
-.donut-dot.green { background: hsl(var(--success)); }
-.donut-dot.red { background: hsl(var(--danger)); }
+.donut-dot.green {
+  background: hsl(var(--success));
+}
+
+.donut-dot.red {
+  background: hsl(var(--danger));
+}
 
 /* System Health List */
 .system-health-list {
@@ -1114,13 +1184,11 @@
   width: 100%;
   padding: 2.2rem 0;
   margin: 1.5rem 0;
-  background: repeating-linear-gradient(
-    90deg,
-    transparent,
-    transparent 20px,
-    rgba(75, 85, 99, 0.25) 20px,
-    rgba(75, 85, 99, 0.25) 26px
-  );
+  background: repeating-linear-gradient(90deg,
+      transparent,
+      transparent 20px,
+      rgba(75, 85, 99, 0.25) 20px,
+      rgba(75, 85, 99, 0.25) 26px);
   border-top: 2px dashed rgba(156, 163, 175, 0.2);
   border-bottom: 2px dashed rgba(156, 163, 175, 0.2);
   border-radius: 8px;
@@ -1172,13 +1240,23 @@
 }
 
 @keyframes train-arrive-ltr {
-  0% { transform: translateX(-105vw); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(-105vw);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 @keyframes train-arrive-rtl {
-  0% { transform: translateX(105vw); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(105vw);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 /* Coach connected compartment model */
@@ -1220,7 +1298,7 @@
   background: #111827;
   border: 2px solid #6b7280;
   border-radius: 50%;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.6);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
 }
 
 .coach-connector {
@@ -1236,7 +1314,7 @@
 .engine-cab {
   width: 140px;
   height: 96px;
-  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--bg-card)) 100%);
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--bg-card-hover)) 100%);
   border: 2px solid hsl(var(--primary));
   border-radius: 8px;
   position: relative;
@@ -1265,7 +1343,7 @@
   background: #60a5fa;
   border: 2px solid #2563eb;
   opacity: 0.75;
-  box-shadow: inset 0 0 4px rgba(255,255,255,0.4);
+  box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.4);
 }
 
 .engine-right .engine-window {
@@ -1363,7 +1441,8 @@
   transition: all 0.25s ease;
   cursor: pointer;
   position: relative;
-  overflow: hidden; /* Prevent horizontal scrollbars/overflow during entering animations */
+  overflow: hidden;
+  /* Prevent horizontal scrollbars/overflow during entering animations */
 }
 
 .track-row.active:hover {
@@ -1451,7 +1530,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 4px;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.2s ease;
   padding: 0.25rem 0;
   position: relative;
@@ -1461,7 +1540,7 @@
 .direct-coach-block:hover {
   transform: translateY(-2px);
   z-index: 10;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 24px rgba(17, 45, 78, 0.08);
 }
 
 .dc-header {
@@ -1481,10 +1560,12 @@
   background: hsl(var(--success) / 0.85);
   color: #fff;
 }
+
 .direct-coach-block.medium {
   background: hsl(var(--warning) / 0.85);
   color: #111;
 }
+
 .direct-coach-block.high {
   background: hsl(var(--danger) / 0.85);
   color: #fff;
@@ -1495,10 +1576,12 @@
   border: 2px solid hsl(var(--women)) !important;
   box-shadow: inset 0 0 8px hsl(var(--women) / 0.4);
 }
+
 .direct-coach-block.firstclass-only {
   border: 2px solid hsl(var(--firstclass)) !important;
   box-shadow: inset 0 0 8px hsl(var(--firstclass) / 0.4);
 }
+
 .direct-coach-block.disabled-only {
   border: 2px solid hsl(var(--disabled)) !important;
   box-shadow: inset 0 0 8px hsl(var(--disabled) / 0.4);
@@ -1506,7 +1589,7 @@
 
 .direct-engine {
   width: 50px;
-  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--bg-card)) 100%);
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--bg-card-hover)) 100%);
   border: 1px solid hsl(var(--primary));
   border-radius: 4px;
   flex-shrink: 0;
@@ -1532,13 +1615,11 @@
 /* Empty Track Line */
 .empty-track-line {
   height: 4px;
-  background: repeating-linear-gradient(
-    90deg,
-    hsl(var(--border) / 0.3),
-    hsl(var(--border) / 0.3) 10px,
-    transparent 10px,
-    transparent 20px
-  );
+  background: repeating-linear-gradient(90deg,
+      hsl(var(--border) / 0.3),
+      hsl(var(--border) / 0.3) 10px,
+      transparent 10px,
+      transparent 20px);
   border-radius: 2px;
   margin: 0.5rem 0;
 }
@@ -1555,6 +1636,7 @@
     transform: translateX(-100%);
     opacity: 0;
   }
+
   100% {
     transform: translateX(0);
     opacity: 1;
@@ -1566,6 +1648,7 @@
     transform: translateX(100%);
     opacity: 0;
   }
+
   100% {
     transform: translateX(0);
     opacity: 1;
@@ -1579,4 +1662,3 @@
 .direct-track-visualizer.anim-rtl {
   animation: slide-in-rtl 2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
 }
-

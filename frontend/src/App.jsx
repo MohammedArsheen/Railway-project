@@ -559,9 +559,9 @@ function App() {
       {/* Main Tab Views */}
       <main className="main-content">
         {activeTab === 'platform' ? (
-          <div className="platform-display">
+          <div className="platform-display animate-fade-in">
             {/* Journey Information Board */}
-            <div className="announcement-board glass">
+            <div className="announcement-board glass card-interactive">
               <div className="announcement-item">
                 <span className="announcement-label">Active Platform</span>
                 <span className="announcement-value highlight">Platform {activeTrain.platform}</span>
@@ -589,7 +589,7 @@ function App() {
             </div>
 
             {/* 5-Track Yard Layout Panel */}
-            <div className="occupancy-grid-container glass">
+            <div className="occupancy-grid-container glass card-interactive">
               <div className="grid-header">
                 <div className="grid-title">
                   <h2>5-Track Station Yard Layout (Guindy Station)</h2>
@@ -720,7 +720,7 @@ function App() {
               </div>
 
               {/* Platform Overview */}
-              <div className="platform-overview-panel">
+              <div className="platform-overview-panel animate-fade-in card-interactive">
                 <div className="platform-overview-header">
                   <div className="grid-title">
                     <h2>Platform Overview</h2>
@@ -835,7 +835,7 @@ function App() {
 
               {/* Selected Train Deep-Dive Analysis */}
               {activeTrain && (
-                <div className="selected-train-deepdive">
+                <div className="selected-train-deepdive animate-fade-in card-interactive">
                   <div className="deepdive-header">
                     <div className="deepdive-train-info">
                       <h3>Train Detail Analysis: {activeTrain.train_id}</h3>
@@ -1048,7 +1048,7 @@ function App() {
             {/* Sidebar Column */}
             <div className="admin-sidebar-col">
               {/* Live Alerts Widget */}
-              <div className="sidebar-widget glass">
+              <div className="sidebar-widget glass card-interactive animate-fade-in">
                 <div className="widget-header">
                   <h3>Live Alerts</h3>
                   <span className="widget-badge">{activeAlerts.length}</span>
@@ -1079,7 +1079,7 @@ function App() {
               </div>
 
               {/* Camera Status Donut Widget */}
-              <div className="sidebar-widget glass">
+              <div className="sidebar-widget glass card-interactive animate-fade-in">
                 <div className="widget-header">
                   <h3>Camera Status</h3>
                   <span className="camera-ratio-text" style={{ color: onlineCameras === totalCameras ? 'hsl(var(--success))' : 'hsl(var(--warning))' }}>
@@ -1114,7 +1114,7 @@ function App() {
               </div>
 
               {/* System Health Widget */}
-              <div className="sidebar-widget glass">
+              <div className="sidebar-widget glass card-interactive animate-fade-in">
                 <div className="widget-header">
                   <h3>System Health</h3>
                 </div>
