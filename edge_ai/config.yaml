@@ -1,0 +1,24 @@
+# RailVision Edge AI Configuration
+system:
+  train_id: "12615"
+  coach_id: "A3"
+  update_interval_seconds: 5
+
+camera:
+  rtsp_url: "rtsp://admin:railway123@192.168.1.100:554/stream1"
+  resolution: [1280, 720]
+  fps: 30
+
+model:
+  type: "YOLOv8n" # YOLOv8 nano for edge deployment optimization
+  weights_path: "weights/yolov8n.pt"
+  confidence_threshold: 0.25
+  device: "cuda"  # NVIDIA Jetson Nano GPU acceleration
+  tensorrt_optimization: true # Convert PyTorch model to TensorRT engine for max FPS
+
+server:
+  api_url: "http://localhost:8000/api/train"
+  timeout_seconds: 2
+
+constraints:
+  max_capacity: 100 # Maximum standard passenger capacity for the coach

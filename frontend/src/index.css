@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --font-heading: 'Outfit', 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* HSL Tailored Color Palette */
+  --bg-dark: 224 25% 6%;
+  --bg-card: 224 25% 10%;
+  --bg-card-hover: 224 25% 13%;
+  --text-primary: 210 40% 98%;
+  --text-secondary: 215 20% 70%;
+  --text-muted: 215 15% 50%;
+
+  /* Accent Colors */
+  --primary: 217 91% 60%; /* Railway Blue */
+  --primary-hover: 217 91% 50%;
+  
+  --success: 142 70% 45%; /* Low Occupancy - Green */
+  --success-glow: 142 70% 45% / 0.15;
+  
+  --warning: 38 92% 50%; /* Medium Occupancy - Yellow */
+  --warning-glow: 38 92% 50% / 0.15;
+  
+  --danger: 0 84% 60%; /* High Occupancy - Red */
+  --danger-glow: 0 84% 60% / 0.15;
+
+  --border: 224 25% 16%;
+  --glass-bg: 224 25% 10% / 0.65;
+  --glass-border: 224 25% 18% / 0.5;
+  
+  /* Women's coach special theme */
+  --women: 322 81% 65%;
+  --women-glow: 322 81% 65% / 0.15;
+
+  /* First class & Differently-Abled themes */
+  --firstclass: 38 92% 58%;
+  --firstclass-glow: 38 92% 58% / 0.15;
+  
+  --disabled: 262 83% 62%;
+  --disabled-glow: 262 83% 62% / 0.15;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: hsl(var(--bg-dark));
+  color: hsl(var(--text-primary));
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: hsl(var(--glass-bg));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid hsl(var(--glass-border));
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--bg-dark));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--text-muted));
+}
+
+/* Animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+}
+
+.pulse-green {
+  animation: pulse-glow 2s infinite ease-in-out;
+  box-shadow: 0 0 15px hsl(var(--success) / 0.4);
+}
+
+.pulse-yellow {
+  animation: pulse-glow 2s infinite ease-in-out;
+  box-shadow: 0 0 15px hsl(var(--warning) / 0.4);
+}
+
+.pulse-red {
+  animation: pulse-glow 2s infinite ease-in-out;
+  box-shadow: 0 0 15px hsl(var(--danger) / 0.4);
+}
+
+/* Base custom classes */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge-low {
+  background: hsl(var(--success-glow));
+  color: hsl(var(--success));
+  border: 1px solid hsl(var(--success) / 0.3);
+}
+
+.badge-medium {
+  background: hsl(var(--warning-glow));
+  color: hsl(var(--warning));
+  border: 1px solid hsl(var(--warning) / 0.3);
+}
+
+.badge-high {
+  background: hsl(var(--danger-glow));
+  color: hsl(var(--danger));
+  border: 1px solid hsl(var(--danger) / 0.3);
+}
+
+.badge-women {
+  background: hsl(var(--women-glow));
+  color: hsl(var(--women));
+  border: 1px solid hsl(var(--women) / 0.3);
+}
+
+.badge-firstclass {
+  background: hsl(var(--firstclass-glow));
+  color: hsl(var(--firstclass));
+  border: 1px solid hsl(var(--firstclass) / 0.3);
+}
+
+.badge-disabled {
+  background: hsl(var(--disabled-glow));
+  color: hsl(var(--disabled));
+  border: 1px solid hsl(var(--disabled) / 0.3);
+}
